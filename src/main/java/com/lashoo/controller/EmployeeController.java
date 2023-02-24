@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lashoo.dao.employeeDao;
-import com.lashoo.model.Employees;
+import com.lashoo.model.Employee;
 
 @RestController
 @RequestMapping("/employees")
-public class SummaryController {
+public class EmployeeController {
 	
 	@GetMapping("/findAll")
-	public List<Employees> findAll(){
+	public List<Employee> findAll(){
 		return employeeDao.find();
 	}
 

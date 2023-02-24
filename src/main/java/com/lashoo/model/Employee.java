@@ -1,5 +1,7 @@
 package com.lashoo.model;
 
+import java.util.Set;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +13,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Employees {
+public class Employee {
 
 	private int employeeId;
 	private String firstName;
@@ -20,5 +22,7 @@ public class Employees {
 	private String email;
 	private String username;
 	private String password;
+	private Set<Role> role;
+	private Set<Address> address;
 
 }
