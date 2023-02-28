@@ -1,14 +1,10 @@
 package com.lashoo.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import com.lashoo.enums.RoleEnums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,14 +18,14 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-@Table(name="role")
-public class Role {
+@Table(name="product_tbl")
+public class Product {
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "role_id")
-	private int role_id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int product_id;
 	
-	private RoleEnums roleName;
-	
-	
+	private String productName;
+	private int quantity;
+	private int price;
 }
