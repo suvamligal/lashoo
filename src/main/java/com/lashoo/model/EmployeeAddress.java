@@ -1,11 +1,10 @@
 package com.lashoo.model;
 
-import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -21,29 +20,19 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-@Table(name ="employee")
-public class Employee {
-
+@Table(name="employee_address")
+public class EmployeeAddress {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int employee_id;
+    @Column(name = "address_id")
+	private int address_id;
 	
-	private String firstName;
-	private String lastName;
-	private String phoneNumber;
-	private String email;
-	private String username;
-	private String password;
-	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="address_id")
-	private EmployeeAddress address;
-	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="role_id")
-	private Role role;
-	
-	
-	
+	private String street;
+	private String city;
+	private String state;
+	private String county;
+	private String country;
+	private String zipCode;
 
 }

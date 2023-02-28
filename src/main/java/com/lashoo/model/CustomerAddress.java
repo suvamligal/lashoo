@@ -20,13 +20,13 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-@Table(name="address")
-public class Address {
+@Table(name="customer_address")
+public class CustomerAddress {
 	
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "adress_id")
-	private int adress_id;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name = "address_id")
+	private int address_id;
 	
 	private String street;
 	private String city;
@@ -34,6 +34,5 @@ public class Address {
 	private String county;
 	private String country;
 	private String zipCode;
-	
 
 }
